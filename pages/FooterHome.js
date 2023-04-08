@@ -8,10 +8,10 @@ const Footer = (mode) => {
     const pages = [
         "Dashboard",
         "Profile",
-        "Feedback",
-        "Events",
+        // "Feedback",
+        // "Events",
         //   "FAQS",
-        "Contact Us"
+        // "Contact Us"
     ];
     return (
         <div
@@ -116,7 +116,7 @@ const Footer = (mode) => {
                     </Grid>
                 </Grid>
                 <h4 style={{ padding: "0 0 1.5% 0" }}>
-                    Made with <span style={{ color: "red" }}>❤</span> from TripRight
+                    Made with <span style={{ color: "red" }}>❤</span> from SmartParent
                 </h4>
             </center>
         </div>

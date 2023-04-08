@@ -15,6 +15,8 @@ import ProgressCircle from "../../components/ProgressCircle";
 import Navbar from '../../components/Navbar';
 import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
 import { Link } from "react-router-dom";
+import BarGraph from "../../components/BarGraph";
+import TimeRemaining from '../../components/TimeRemaining';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -24,14 +26,15 @@ const Dashboard = () => {
     
   <>
   {/* <Navbar/> */}
-    <Box m="20px">
+   {/* <div data-aos='zoom-in-up'> */}
+   <Box m="20px" >
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         {/* <p>hi</p> */}
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="Welcome Mr. Aryan Mehta" />
 
         <Box display='flex' alignItems='center' justifyContent='center'>
-          <Link to='/profile'>
+          <Link to='/'>
           <Button
             sx={{
               backgroundColor: colors.blueAccent[700],
@@ -67,8 +70,9 @@ const Dashboard = () => {
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         // offset={1}
-        gridAutoRows="140px"
+        gridAutoRows="150px"
         gap="20px"
+        // style={{'data-aos':'zoom-in-up'}}
       >
         {/* <h1>hi</h1> */}
         {/* ROW 1 */}
@@ -119,7 +123,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="32,441"
-            subtitle="New Clients"
+            subtitle="Happy Parents"
             progress="0.30"
             increase="+5%"
             icon={
@@ -138,7 +142,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle="Requests received"
             progress="0.80"
             increase="+43%"
             icon={
@@ -151,16 +155,17 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
+          {/* <p>hi</p> */}
           <Box
             mt="25px"
             p="0 30px"
             display="flex "
             justifyContent="space-between"
-            alignItems="center"
+            // alignItems="center"
           >
             <Box>
               <Typography
@@ -168,14 +173,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Time Spent Today
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                4 hours 31 mins
               </Typography>
             </Box>
             <Box>
@@ -186,8 +191,8 @@ const Dashboard = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+          <Box height="90%" m="-20px 0 0 0" width='100%' display='flex' alignItems='center' >
+            <BarGraph isDashboard={true} />
           </Box>
         </Box>
         <Box
@@ -205,7 +210,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Recently Visited Websites
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -230,26 +235,33 @@ const Dashboard = () => {
                 </Typography>
               </Box>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
+              <Button
+              style={{backgroundColor:'#a4a9fc'}}
+                // bg={colors.greenAccent[500]}
                 p="5px 10px"
                 borderRadius="4px"
+                variant='contained'
               >
-                ${transaction.cost}
-              </Box>
+               Block
+              </Button>
             </Box>
           ))}
         </Box>
 
         {/* ROW 3 */}
+         
+
+         
+
         <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
+          
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Time Remaining
           </Typography>
           <Box
             display="flex"
@@ -257,7 +269,7 @@ const Dashboard = () => {
             alignItems="center"
             mt="25px"
           >
-            <ProgressCircle size="125" />
+            <TimeRemaining size="150" />
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
@@ -268,6 +280,63 @@ const Dashboard = () => {
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
+
+
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+        >
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={`4px solid ${colors.primary[500]}`}
+            colors={colors.grey[100]}
+            p="15px"
+          >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              Recently Visited Websites
+            </Typography>
+          </Box>
+          {mockTransactions.map((transaction, i) => (
+            <Box
+              key={`${transaction.txId}-${i}`}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              borderBottom={`4px solid ${colors.primary[500]}`}
+              p="15px"
+            >
+              {console.log(i)}
+              <Box>
+                <Typography
+                  color={colors.greenAccent[500]}
+                  variant="h5"
+                  fontWeight="600"
+                >
+                  {transaction.txId}
+                </Typography>
+                <Typography color={colors.grey[100]}>
+                  {transaction.user}
+                </Typography>
+              </Box>
+              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              <Button
+              style={{backgroundColor:'#a4a9fc'}}
+                // bg={colors.greenAccent[500]}
+                p="5px 10px"
+                borderRadius="4px"
+                variant='contained'
+              >
+               Block
+              </Button>
+            </Box>
+          ))}
+        </Box>
+
+
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -303,6 +372,7 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
+   {/* </div> */}
   </>
   );
 };

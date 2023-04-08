@@ -14,6 +14,9 @@ import Home from './pages/Home';
 import { useEffect } from 'react';
 import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
 import chakraTheme from '@chakra-ui/theme'
+import alanBtn from "@alan-ai/alan-sdk-web";
+import { ALAN_API } from "./constants";
+import BarGraph from './components/BarGraph';
 // import Navbar from './components/Navbar'
 
 function App() {
@@ -21,6 +24,17 @@ function App() {
   const [theme, colorMode] = useMode();
   useEffect(() => {
     Aos.init({ duration: 500, once: false });
+  }, []);
+
+  useEffect(() => {
+    alanBtn({
+      key: ALAN_API,
+      onCommand: (commandData) => {
+        if (commandData.command === "go:back") {
+          // Call the client code that will react to the received command
+        }
+      },
+    });
   }, []);
 
   return (
@@ -33,6 +47,7 @@ function App() {
       <Routes>
         {/* <Route exact path="/" element={}/> */}
         {/* <Route path="/profile" element={<Profile/>}/> */}
+        <Route path="/bar" element={<BarGraph/>}/>
         <Route path="/testing" element={<Testing/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>

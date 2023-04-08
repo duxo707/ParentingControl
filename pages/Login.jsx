@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/family.png";
 import { tokens } from "../theme";
 import { DownloadOutlinedIcon } from "@mui/icons-material";
 import { useTheme, Button } from "@mui/material";
@@ -68,7 +68,7 @@ const Login = () => {
         <Link className='flex items-center gap-2' to="/">
           <img className="w-8" src={logo} alt="" />
           <h1 className="text-2xl font-bold underline decoration-[#a4a9fc]">
-            tripbright
+          SmartParent
           </h1>
         </Link>
         <h1 className="text-5xl font-semibold mt-12 uppercase">Login</h1>

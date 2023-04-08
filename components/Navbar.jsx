@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import travelLogo from "../assets/images/travelLogo.jpg";
+import logo from "../assets/images/family.png";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next'
 import { Fragment } from 'react'
@@ -45,13 +45,13 @@ const Navbar = () => {
   return (
     <div className="w-full flex px-24 py-4 justify-between items-center">
       <div className="flex items-center gap-2">
-        <img className="w-8" src={travelLogo} alt="" />
+        <img className="w-8" src={logo} alt="" />
         <h1
           className={`text-2xl font-bold underline ${
             color === "emerald"
-              ? "decoration-emerald-500"
+              ? "decoration-[#a4a9fc]"
               : color === "amber"
-              ? "decoration-amber-500"
+              ? "decoration-amber-500"  
               : color === "sky"
               ? "decoration-sky-500"
               : color === "red"
@@ -61,7 +61,7 @@ const Navbar = () => {
               : "decoration-purple-500"
           }`}
         >
-        TRAVEEZY
+        SmartParent
         </h1>
       </div>
       <div className="flex gap-10 items-center capitalize">
@@ -72,7 +72,7 @@ const Navbar = () => {
             {t("home")}
           </h1>
           {location.pathname === "/" && (
-            <div className={`bg-${color}-500 w-4 capitalize h-1 rounded`}></div>
+            <div className={`bg-[#a4a9fc] w-4 capitalize h-1 rounded`}></div>
           )}
         </Link>
         <Link to="/profile" className="flex flex-col items-center">
@@ -81,72 +81,26 @@ const Navbar = () => {
               location.pathname === "/profile" ? "900" : "700"
             }`}
           >
-            {t("profile")}
+            {t("Profile")}
           </h1>
           {location.pathname === "/profile" && (
+            <div className="bg-[#a4a9fc] w-4 h-1 rounded"></div>
+          )}
+        </Link>
+        <Link to="/dashboard" className="flex flex-col items-center">
+          <h1
+            className={`font-semibold capitalize text-lg text-gray-${
+              location.pathname === "/dashboard" ? "900" : "700"
+            }`}
+          >
+            {t("Dashboard")}
+          </h1>
+          {location.pathname === "/dashboard" && (
             <div className={`bg-${color}-500 w-4 h-1 rounded`}></div>
           )}
         </Link>
-        <Link to="/home" className="flex flex-col items-center">
-          <h1
-            className={`font-semibold capitalize text-lg text-gray-${
-              location.pathname === "/home" ? "900" : "700"
-            }`}
-          >
-            {t("chat")}
-          </h1>
-          {location.pathname === "/home" && (
-            <div className="bg-emerald-500 w-4 h-1 rounded"></div>
-          )}
-        </Link>
-        <Link to="/itinerary" className="flex flex-col items-center">
-          <h1
-            className={`font-semibold capitalize text-lg text-gray-${
-              location.pathname === "/itinerary" ? "900" : "700"
-            }`}
-          >
-            {t("Itinerary")}
-          </h1>
-          {location.pathname === "/itinerary" && (
-            <div className="bg-emerald-500 w-4 h-1 rounded"></div>
-          )}
-        </Link>
-        <Link to="/events" className="flex flex-col items-center">
-          <h1
-            className={`font-semibold text-lg text-gray-${
-              location.pathname === "/events" ? "900" : "700"
-            }`}
-          >
-            {t("Events")}
-          </h1>
-          {location.pathname === "/events" && (
-            <div className="bg-emerald-500 w-4 h-1 rounded"></div>
-          )}
-        </Link>
-        <Link to="/forum" className="flex flex-col items-center">
-          <h1
-            className={`font-semibold text-lg text-gray-${
-              location.pathname === "/forum" ? "900" : "700"
-            }`}
-          >
-            {t("Forum")}
-          </h1>
-          {location.pathname === "/forum" && (
-            <div className="bg-emerald-500 w-4 h-1 rounded"></div>
-          )}
-        </Link>
-        <Link to="/groups" className="flex flex-col items-center">
-          <h1
-            className={`font-semibold text-lg text-gray-${
-              location.pathname === "/forum" ? "900" : "700"
-            }`}
-          >
-            {t('Groups')}
-          </h1>
-          {location.pathname === "/groups" && (
-            <div className="bg-emerald-500 w-4 h-1 rounded"></div>
-          )}
-        </Link>
+       
+        
       </div>
       {user ? (
         <div className="flex gap-4 items-center">
@@ -214,7 +168,7 @@ const Navbar = () => {
           </Link>
           <Link to="/register">
             <button
-              className={`text-gray-100 px-8 py-3 bg-${color}-500 rounded-full`}
+              className={`text-gray-100 px-8 py-3 bg-[#a4a9fc] rounded-full`}
             >
               {t("Register")}
             </button>

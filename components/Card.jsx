@@ -20,7 +20,7 @@ const Card = (props) => {
         <h1 className="text-gray-800 text-xl font-bold mb-2">{(props.name)}</h1>
         <h1 className="text-gray-400 text-sm mb-4 flex items-center gap-2"> 
         </h1>
-        <Box display='flex' height='25vh'>
+        <Box display='flex' height='100%'>
         <Typography variant='h6' color={colors.grey[600]}>
             {props.testimonial}
         </Typography>

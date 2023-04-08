@@ -5,7 +5,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/family.png";
 import { tokens } from "../theme";
 import { DownloadOutlinedIcon } from "@mui/icons-material";
 import { useTheme, Button } from "@mui/material";
@@ -35,6 +35,7 @@ const Register = () => {
     number: "",
     email: "",
     password: "",
+    age_range:""
   });
   const [pan, setPan] = useState(false);
   const [role, setRole] = useState("User");
@@ -164,7 +165,7 @@ const Register = () => {
           <Link className="flex items-center gap-2" to="/">
             <img className="w-8" src={logo} alt="" />
             <h1 className="text-2xl text-[#141414] font-bold underline decoration-[#a4a9fc]">
-              tripbright
+              SmartParent
             </h1>
           </Link>
           <h1 className="text-5xl font-semibold mt-12 uppercase text-[#141414]">

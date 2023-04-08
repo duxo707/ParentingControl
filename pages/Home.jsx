@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import mountain from "../assets/videos/mountain.mp4";
+import familyVideo from "../assets/videos/familyVideo.mp4";
 import monuments from "../assets/videos/monuments.mp4";
 import beach from "../assets/videos/beach.mp4";
 import temple from "../assets/videos/temple.mp4";
@@ -147,7 +147,7 @@ const Home = () => {
         className={`absolute -z-10 w-full h-auto ${theme !== "emerald" ? "hidden" : "block"
           }`}
       >
-        <source src={mountain} type="video/mp4" />
+        <source src={familyVideo} type="video/mp4" />
       </video>
       <div className="bg-gray-800/40 h-screen">
         <div className="text-gray-100">
@@ -198,15 +198,15 @@ const Home = () => {
   className="flex flex-col items-center py-36 px-60 gap-6 h-full"
 >
   <h1 className="text-6xl text-gray-100 font-bold text-center leading-snug">
-    {t("Explore the world with your perfect travel companion")}
+    {t(" A Comprehensive Control Application for Your Child's Digital Life")}
   </h1>
   <h1 className="text-xl text-gray-300 font-medium text-center leading-normal">
-    {t("Join our community of adventurous singles and start your next journey together!")}
+    {t("Join Our Community of Responsible Parents and Ensure Your Child's Safe Digital Journey Together!")}
   </h1>
   <Link to="/register" className="">
     <button
       className={`text-gray-100 text-lg capitalize px-10 py-6 ${theme == "emerald"
-        ? "bg-emerald-500"
+        ? "bg-[#a4a9fc]"
         : theme == "amber"
           ? "bg-amber-500"
           : theme == "sky"
@@ -227,7 +227,7 @@ const Home = () => {
       <div
         className={` px-36 bg-gradient-to-t from-white
      ${theme == "emerald"
-            ? "bg-emerald-200"
+            ? "bg-[#cdcffd]"
             : theme == "amber"
               ? "bg-amber-200"
               : theme == "sky"
@@ -245,7 +245,7 @@ const Home = () => {
             <button
               data-aos="zoom-in-up"
               // onClick={() => setTheme("emerald")}
-              className="flex flex-col items-center justify-center w-60 h-60 shadow-lg rounded-2xl bg-emerald-100 text-xl font-semibold gap-2 focus:outline focus:shadow-emerald-700/70"
+              className="flex flex-col items-center justify-center w-60 h-60 shadow-lg rounded-2xl bg-emerald-100 text-xl font-semibold gap-2 focus:outline focus:shadow-emerald-700/70"  
             >
               <img
                 className="w-28"
@@ -312,7 +312,7 @@ const Home = () => {
               {/* {t("Search your")}{" "} */}
               <span
                 className={`underline ${theme == "emerald"
-                  ? "decoration-emerald-500"
+                  ? "decoration-[#a4a9fc]"
                   : theme == "amber"
                     ? "decoration-amber-500"
                     : theme == "sky"
